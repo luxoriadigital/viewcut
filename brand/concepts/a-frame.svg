@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <clipPath id="afLower"><polygon points="565.51,-114.21 -300.51,385.79 49.49,992.01 915.51,492.01"/></clipPath>
+    <clipPath id="afUpper"><polygon points="556.51,-129.79 -309.51,370.21 -659.51,-236.01 206.51,-736.01"/></clipPath>
+  </defs>
+  <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#afLower)"/>
+  <g transform="translate(12.1,-7)">
+    <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#afUpper)"/>
+  </g>
+</svg>

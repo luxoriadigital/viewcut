@@ -1,0 +1,239 @@
+# Viewcut — points à confirmer avant publication
+
+Nom : **Viewcut** (viewcut.vercel.app libre au 05/10/2026 — collision exacte non trouvée ;
+  à vérifier : handle Instagram/X, marque déposée, dashboard Vercel pour créer le projet).
+  Alternatives gardées : Renderly, Reelproof, Montage, Cutroom.
+
+## Promesses de service écrites dans la page et la VSL (à valider)
+1. Délai : « une vidéo courte part en général dans la journée, volume régulier = créneau réservé »
+   (index.html FAQ + scripts/fr.json slide 11 + scripts/en.json slide 11).
+2. « 1 tour de révisions » inclus (index.html section Prix).
+3. « Réponse en moins de 24 h » (scripts slide 11).
+4. Le CTA réel : e-mail / Calendly / formulaire à brancher (3 ancres `#final` + commentaires TODO).
+5. Deuxième langue FR/EN : calcul du devis (FAQ) — volontairement non numéroté.
+
+## Chiffres autorisés (fournis par toi, conservés tels quels)
+- 10 € par heure de vidéo livrée.
+- ~50 €/h = moyenne du marché en montage (vérifié 05/10/2026 — Videotto : mid 50–80 €/h,
+  senior 85 €/+ ; Raccordfilm : 50–90 €/h ; Malt 2025 : TJM moyen 471 € ≈ 59 €/h ;
+  le « 35 €/h » initial était sous-estimé → remplacé partout : page + scripts FR/EN).
+- ≈700 000 vues visibles sur les captures Instagram (somme des screenshots).
+- 1 000 000+ de vues cumulées sur toutes les publications (total déclaré).
+  → affichés séparément dans la section Preuves (barre : ≈700 000 / + le reste / 1M+).
+  ⚠ INTERDIT : dire ou laisser entendre que ces vues sont « générées avec cette méthode »
+  (faux). Elles servent d'autorité : section « Mes publications », titre VSL
+  « 1M+ de vues. Sur mes publications. » (ancien « Générées. » supprimé).
+- Risk-reversal : « 30 s de vidéo test gratuites » (hero, prix, mécanisme, FAQ, CTA final, VSL FR + EN).
+
+## Contact WhatsApp (boutons CTA)
+- 4 boutons `data-wa` (nav, hero, prix, CTA final) → constante `WHATSAPP` dans `assets/app.js`.
+- ✅ Numéro branché (05/10) : `32467679694` → wa.me ouvre le pré-message
+  « Je veux mes 30 s de vidéo test gratuites ».
+
+## Voix (patterns humains appliqués aux 2 VSL)
+- Étude (PubMed voice-over pros, JCR rate/pitch, coaching VO) → matrice `PROSODY` dans
+  `vsl/tools/build.py` : pitch bas/amplitude large, rythme variable
+  (rapide hook/preuve/CTA, lent et grave sur les chiffres prix/coût), pauses « … »
+  stratégiques avant les révélations.
+- Itération 2 (dé-robotisation) : synthèse **phrase par phrase** — rate/pitch alternés
+  entre phrases, +5 Hz sur les questions, −7 % de rythme sur les phrases chiffrées,
+  et **respiration de 140 ms** entre chaque phrase (concat ffmpeg).
+- Itération 3 (voix) : FR = `fr-FR-RemyMultilingualNeural`, EN = `en-US-BrianNeural`
+  (Henri/Andrew remplacés : lecture monotone). Variance phrase à phrase élargie (±5 %/±3 Hz).
+- Seuil de validation mp3 abaissé à 2 000 o (une phrase courte type « No. » = 3,7 ko).
+- Régénérer = supprimer `vsl/assets/vo` puis `py tools\build.py` (cache mp3).
+
+## Plein écran (page)
+- Lecteur VSL : bouton « ⛶ » dans la barre custom + double-clic sur la vidéo
+  (app.js → toggleFs ; raccourci clavier « f »).
+- Captures : clic = ouverture plein écran (lightbox flèches/Échap/clavier, app.js → initProof).
+- Message d'erreur vidéo : « La vidéo ne se charge pas / Réessaie dans un instant… »
+  (3 retries auto avec cache-buster + masquage au `loadedmetadata`) — plus jamais de
+  « MP4 introuvable » ni de mots techniques.
+- ⚠ ROOT CAUSE du message toujours visible (trouvé le 05/10) : `.player .missing`
+  imposait `display:flex` et **écrasait l'attribut `hidden`** (spécificité CSS > UA) :
+  le bandeau était peint en permanence, même quand la vidéo marchait. Corrigé par
+  `.missing[hidden],[hidden]{display:none!important}` — vérifié par capture headless
+  (aucun bandeau, metadata chargée, barre de chapitres visible).
+
+## Lecteur 100 % custom — interface native retirée (05/10)
+- `<video>` sans attribut `controls` (+ masque `::-webkit-media-controls` en sécurité) :
+  uniquement NOTRE barre (`#ctrl` : ▶/❚❚, `0:00 / 2:54`, ☰ Chapitres, 🔊 + curseur
+  volume, vitesse, ⛶) et le bouton play central (`#big-play`, anneau pulsé).
+- **Lecture à 1.2× par défaut** (`DEFAULT_RATE`, appliqué à `loadedmetadata`) ; bouton
+  de vitesse qui cycle 1 → 1.2 → 1.5 → 2×.
+- Scrubber custom (clic + glisser `pointerdown/move/up` avec `setPointerCapture`) :
+  rail + progression bleue + pastille qui grossit au survol ; **les 11 segments de
+  chapitres sont DANS la barre** (ratios calculés sur `chapters.json`), infobulle
+  survol = « 0:35 · Le coût réel » (heure + chapitre sous le curseur).
+- Dynamique, sans perdre en lisibilité : barre qui glisse-fondu après 2,6 s de lecture
+  (`.player.idle`, réapparition au moindre mouvement ; jamais si le panneau est ouvert),
+  play central qui disparaît en lecture, boutons qui grossissent au survol,
+  panneau chapitres animé (`panelIn`), items qui glissent au survol.
+- Raccourcis : Espace/K = lecture-pause, ←/→ = ±5 s, M = mute, F = plein écran,
+  Échap = ferme le panneau — **Espace/flèches ignorés hors champ visible**
+  (`playerInView`) pour ne pas voler le défilement de la page.
+- Durée affichée arrondie (`fmt(Math.round(d))`) → « 2:54 » cohérent avec
+  « Durée : 2:54 » (metadata tronquée = 2:53 au floor).
+- Vérifié headless : `<video>` sans `controls`, 11/11 segments, 1.2×, captures
+  `player-v2/v3.png`.
+
+## Chapitres intégrés au lecteur (style YouTube) — plus de panneau à côté
+- Segments de chapitre directement dans le scrubber (`#chbar` / `.chseg`) : survol =
+  infobulle, clic = saut au chapitre, chapitre actif en bleu (markActive).
+- Bouton « ☰ Chapitres » dans la barre custom → panneau liste déroulante intégré
+  (`#chapters-panel`, Esc/clic extérieur pour fermer).
+- Sous la vidéo : durée + « Copier la liste des chapitres » (pour la description YouTube).
+- Chapitre FR « L'offre » renommé « Le prix » (EN « The price ») — vocabulaire client.
+
+## Serveur durci (`serve.js`) — cause probable du « ne se charge pas »
+- Gestion d'erreur sur les streams (annulation de range par le navigateur = EPIPE
+  qui tuait le process), suffix ranges `bytes=-N`, 416 hors bornes, HEAD, GET seul.
+- Vérifié : 200 / 206 (0-, -100) / 416 / HEAD, survit à une requête interrompue.
+
+## Langue
+- Page de vente en **français uniquement** (plus de switch FR/EN, plus de promesse
+  « version EN » dans la copie). La VSL EN reste disponible : `assets/vsl-en.mp4`
+  + `chapters-en.txt` pour l'éventuelle vidéo YouTube anglaise.
+  Si tu veux une page EN plus tard : dupliquer `index.html` → `en.html`, rebrancher
+  `app.js` (chaptersData.en) et le lien hreflang.
+
+## Preuve sociale — jamais inventée
+- ✅ 4 captures déposées (05/10) : `assets/proof/proof-1..4.png` (1179×~2000, filigrane Viewcut
+  blanc à 15 % en diagonale posé dessus, originaux conservés dans `assets/proof/raw/`).
+  Ordre : 639 971 → 32 191 → 14 256 → post 15 K ; somme ≈ 686 k ≈ « ≈700 000 » de la barre.
+  → proof-4 (post 15 K) n'est plus affichée : le screenshot montre surtout l'état vide
+  « Aucune statistique disponible » (confond avec une panne). Fichier gardé en preuve.
+  3 captures affichées = 639 971+32 191+14 256 = 686 418 ≈ « environ 700 000 » toujours exact.
+- Footer : raison sociale, adresse, e-mail, mentions légales = placeholders `[...]`.
+
+## Vidéos (HyperFrames, dossier `vsl/`) — 12 diapos, slide « deux langues » supprimée
+- Rebuild : `cd vsl` puis `py tools\build.py` (TTS fr-FR-HenriNeural / en-US-AndrewNeural,
+  timeline, chapitres) puis `cmd /c npx hyperframes check`
+  puis `cmd /c npx hyperframes render -q delivery --skill=general-video -o renders/viewcut-vsl-fr.mp4`
+  et `cmd /c npx hyperframes render -c compositions/en.html -q delivery --skill=general-video -o renders/viewcut-vsl-en.mp4`
+  puis copier les 2 MP4 dans `../assets/vsl-fr.mp4` et `../assets/vsl-en.mp4`.
+- Durées : FR 2:54 (173,8 s), EN 2:55 (175,2 s). Chapitres : `chapters-fr.txt` (11),
+  `chapters-en.txt` (11)
+  à coller dans la description YouTube de chaque version ; la page lit `assets/chapters.json`.
+- Allowance HyperFrames : `usage --json` → status unknown (non déductible) — signalé, non deviné.
+
+## Identité visuelle (05/10) — logo « Cadre tranché » + favicon branchés
+- Kit livré : `brand/kit/` (skill logo-design) — masters SVG, variantes black/white/#0055ff,
+  app-icon, favicon, jeu web (`web/`), planche `presentation.html` + `slides/` (5 vues),
+  `GUIDELINES.md`, script `make_kit.py`. Audits : symbole 100/100, logotypes 90/100
+  (WARN restant = angles des lettrages, attendu pour du texte).
+- Nav : logo texte `View<b>cut</b>` remplacé par `<img viewcut-horizontal.svg>` (h 34 px) ;
+  CSS `.logo img` dans `assets/style.css`. Vérifié desktop + mobile (390 px).
+- Favicon : `favicon.ico/svg`, `apple-touch-icon.png`, `icon-192/512.png`,
+  `maskable-512.png`, `site.webmanifest` copiés à la racine ; liens `<head>` ajoutés
+  (chemins relatifs) + `theme-color #0055ff`. Icônes du manifest en relatif aussi.
+- Proposals non appliquées à la page : tagline « Montage vidéo à 10 €/h » (planche seulement).
+
+## Refonte visuelle « style Blue Star » (06/10) — tells IA supprimés
+- Référence : https://blue-star-agency.fr/ étudiée (CTA dégradé, pilule, éditorial) ;
+  audit websearch des tells IA → appliqués/removals sur notre landing :
+  * **Nav = pilule** : header sticky transparent (`pointer-events:none`) + `.nav-pill`
+    blanche flottante (logo, liens centrés en chips, CTA pilule) ; ≤1000 px = pilule
+    logo+WhatsApp + pilule de raccourcis séparée. Supprimé : blur `backdrop-filter`
+    + barre pleine largeur. `scroll-margin-top` 84 / 146 px conservés.
+  * **CTA signature** : `linear-gradient(#1a63ff→#0055ff 58%)` + bevel `#9bbafa` +
+    ring 1,5 px + glow bleu, radius 8 px, hover `scale(.95)` (ressort).
+    `#1a63ff` (pas `#2f7bff` de Blue Star) = blanc ≥4,5:1 sur tout le haut du bouton.
+  * **Typo display** : Archivo (700/800/900) pour h1-h4, chiffres, boutons ;
+    Inter reste le corps. `shine` (dégradé balayant) sur l'accent du h1.
+  * **Dé-templatisé** : problèmes/principe/pour-qui → `.rows` (lignes à filets,
+    glyphes ✕/✓ nus colorés, zéro boîte) ; étapes → colonnes à filet bleu `01/02/03`
+    (plus de blocs ink) ; formats → étiquettes pills ; stats hero → colonnes à filets
+    (`10 €` en bleu au lieu de la boîte noire) ; suppression du glow radial `.hero:before`.
+  * **Tells restants supprimés** : emoji 👋 des 4 `data-wa-text`, CSS mort
+    (`.lang`, `.block`, `.chapters*`, `.vsl-grid`, `.note`, `.cards/.card/.card-mini/.fit`),
+    rayons hiérarchisés (médias 24 / contenu 12 / blocs 18 / boutons 8).
+  * **Footer** : `Viewcut` texte → `<img viewcut-horizontal-white.svg>` (variante blanche
+    du kit, h clamp 56-150 px). **Curseur custom** : symbole `mono-0055ff-32.png`
+    (hotspot 4 4 = bbox du mark) en défaut sur `(hover:hover) and (pointer:fine)`,
+    fallback PNG noir puis `auto` — visible sur clair ET sombre ; liens/boutons
+    gardent le pointeur natif (règles `cursor:pointer` existantes).
+- Vérifié 06/10 : contrast.py 31 paires 0 FAIL ; `node --check` OK ;
+  shoot+assert 390/768/1440 : `sw=vw`, 3 captures chargées, 0 erreur JS,
+  `rows=3 rowItems=10 cards=0 fmt=5 wave=false`, pilule flex/999 + pointer-events OK,
+  `Archivo=true`, `cursor:url`, footer logo chargé, gridCols 1/2/3, nbsp + li1=2 OK.
+  Contrôles pixels (PIL) : CTA = ring+bevel+dégradé+glow ; étiquettes formats,
+  filets stats/étapes, logo footer blanc, pas de blocs foncés dans les étapes.
+
+## Purge du ton commercial + tableau comparatif (06/10, suite)
+- **Curseur custom supprimé** : bloc `cursor:url(...)` retiré de `assets/style.css`
+  → pointeur système par défaut (règles `cursor:pointer` natives conservées).
+- **Tableau comparatif refait** : grille complète lignes + colonnes
+  (`border-collapse:separate`, filets 1 px), colonne Viewcut séparée (filet bleu 1,5 px
+  à gauche + teinte `rgba(0,85,255,.05)` + en-tête blanc à logo
+  `viewcut-horizontal.svg` 24 px + filet bleu sous l'en-tête), 2 lignes ajoutées :
+  « Qui monte la vidéo » (Le freelance / Toi, avec l'outil / Moi) et « Si tu bloques »
+  (Le freelance / Le support de l'outil / Moi, sur WhatsApp) → 7 lignes au total.
+  Mobile ≤640 px : police 12 px, padding 10/7, logo 17 px → les 4 colonnes tiennent
+  sans scroll (table = conteneur exact : `wrapScroll == wrapClient == 342`).
+- **Chapitres VSL dé-commerciaux** : FR « Objections » → « Les doutes ? »,
+  « Appel à l'action » → « Que faire ? » ; EN « Objections » → « Doubts? »,
+  « Call to action » → « What now? ». Fichiers : `assets/chapters.json`,
+  `chapters-fr.txt`, `chapters-en.txt`, `vsl/scripts/{fr,en}.json`,
+  `vsl/build/slides-{fr,en}.json`, et `vsl/tools/build.py` (`DISP_FR` kickers :
+  OBJECTION→« DOUTES ? », CTA→« QUE FAIRE ? »).
+  **Avertissement** : les MP4 déjà rendus gardent les anciens kickers à l'écran ;
+  relancer `py vsl/tools/build.py` puis un render pour les régénérer.
+- **Tournures de vente purgées** : h2 « Je vends le résultat. Pas l'outil. » →
+  « Tu reçois une vidéo. Pas un logiciel. » ; meta/og description « facturé au
+  résultat » → « à 10 € par heure de vidéo livrée » ; commentaire
+  `<!-- CTA FINAL -->` → `<!-- BLOC FINAL -->`. Grep final (index.html + app.js) :
+  aucune occurrence offre/promo/vend/urgent/garanti/etc. Les classes `hero-cta` /
+  `nav-cta` restent (internes, invisibles).
+- **Vérifié 06/10** : contrast.py 0 FAIL ; `node --check` OK ; 5 JSON valides ;
+  shoot + assert 390/768/1440 : `sw=vw`, 0 erreur JS, `cursorDefault=true`,
+  `tblRows=7 tblLogo=true tblVline=1px usLine=1px`, `h2New=true noVend=true chOk=true`,
+  gridCols 1/2/3, pilule/Archivo/footer/logo OK. Captures table desktop + mobile
+  contrôlées par lecture d'image + analyse pixel (teinte `#f2f5ff`, filet `#0055ff`).
+
+## Copy : « Sous-titres » simple + filigrane du test (06/10, suite 2)
+- **« Sous-titres brûlés » → « Sous-titres »** : landing ×3 (étape 02 « Je monte »,
+  étiquette formats `ST`, carte prix) + sources VSL (`vsl/scripts/fr.json`,
+  `vsl/build/slides-fr.json`, `vsl/index.html` slide formats). EN parité :
+  « Burned-in captions. » → « Captions. » (`scripts/en.json`, `slides-en.json`,
+  `compositions/en.html`). La narration EN garde « burned-in captions » (vo → re-TTS
+  si on y touche). **MP4 déjà rendus inchangés** : re-lancer build + render pour appliquer.
+- **Filigrane du test 30 s annoncé (4 endroits)** : ligne « Ce que tu reçois »
+  (« montées, gratuites et filigranées »), carte prix (« de vidéo test gratuites
+  avec filigrane »), FAQ (« prêtes à publier » retiré → « montées, sous-titrées
+  et filigranées »), bloc final (« montées, sous-titrées et filigranées »).
+- **Facecam ajouté** (étape 02 « Je monte », choix utilisateur) → « Montage, rythme,
+  facecam, images et vidéos, sous-titres, découpe par plateforme, chapitres horodatés. ».
+- **Vérifié 06/10** : `npm run check` dans `vsl/` → 0 erreur (contraste 68/68,
+  warnings structurels préexistants) ; assert 3 largeurs OK (0 erreur JS, `sw=vw`,
+  `h2New/noVend/chOk/tblRows/cursorDefault` toujours vrais) ; contrast.py 0 FAIL ;
+  DOM contrôlé (li prix, FAQ, bloc final, étape 02, étiquettes formats) ;
+  5 JSON valides ; captures carte prix à jour.
+
+## Version anglaise + switch FR/EN (06/10)
+
+- **`index-en.html`** : traduction complète de la landing (mêmes guidelines FR :
+  ton direct, aucun mot interdit — vérif 'noBannedWords' EN : buy now/guaranteed/
+  limited time/offer/discount/sell = 0), mêmes chiffres (10 €/h, ~50 €/h, 30 s
+  avec filigrane, 1M+, ≈700 000), meta/og + `og:locale en_US` traduites,
+  hreflang (fr/en/x-default) sur les 2 pages, `data-wa-text` en anglais.
+- **Switch `FR | EN`** dans la pilule de nav (haut, visible à toutes tailles) :
+  `.lang-switch` dans `style.css` (+ compaction ≤1000px/≤430px pour que la pilule
+  ne déborde pas), page active en `aria-current="page"`, le switch conserve l'ancre
+  `#pricing` etc. via `wireLangSwitch()` dans `app.js`.
+- **`app.js` bilingue** : `LANG` lu sur `<html data-lang>`, dictionnaire `STR`
+  (Copié/Copied, lightbox, aria play/mute, titre WhatsApp), chapitres via
+  `chaptersData[LANG]` (JSON avait déjà fr/en) ; lecteur EN = `assets/vsl-en.mp4`
+  (2:55) vs FR vsl-fr.mp4 (2:54).
+- **Sous la VSL (FR+EN)** : ligne « Durée + Copier la liste des chapitres » supprimée
+  (`.vsl-tools` retiré du HTML et du CSS ; refs `app.js` gardées par `if` → 0 erreur).
+- **Vérifié 06/10** : `assert-lang.js` → **49/49 checks** (FR régression, EN aux
+  3 largeurs : overflow/pill OK, 0 JS error, 11 chapitres EN « Opening… What now? »,
+  bouton Copier → « Copied ✓ », zéro reliquat français, switch FR↔EN garde le hash) ;
+  captures visuelles : EN 1440 ✓, FR 1440 ✓ (switch FR actif), nav EN 390 ✓.
+
+## Suite possible
+- Déploiement Vercel (nom à créer dans le dashboard) + domaine.
+- Ajout d'un vrai contact (formulaire/calendrier) et des captures.
+- OpenSEO : crédits insuffisants pour du rank/keyword là tout de suite.

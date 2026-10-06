@@ -1,0 +1,258 @@
+{
+ "lang": "en",
+ "voice": "en-US-BrianNeural",
+ "total": 175.144,
+ "slides": [
+  {
+   "n": 1,
+   "id": "s01",
+   "label": "HOOK",
+   "disp": "HOOK",
+   "chapter": "Opening",
+   "start": 0.0,
+   "dur": 19.98,
+   "audio": 19.18,
+   "title": [
+    "€10.",
+    "Per finished video hour."
+   ],
+   "bullets": [
+    "Edited · captioned · ready to post",
+    "Market rate: €50/h"
+   ],
+   "tone": "blue",
+   "tc": "0:00"
+  },
+  {
+   "n": 2,
+   "id": "s02",
+   "label": "PROBLEM",
+   "disp": "PROBLEM",
+   "chapter": "The problem",
+   "start": 19.98,
+   "dur": 15.64,
+   "audio": 14.84,
+   "title": [
+    "You post late.",
+    "Because of editing."
+   ],
+   "bullets": [
+    "First cut lands in 3 to 5 days",
+    "Every revision eats a week",
+    "Your calendar slips"
+   ],
+   "tone": "red",
+   "tc": "0:20"
+  },
+  {
+   "n": 3,
+   "id": "s03",
+   "label": "COST",
+   "disp": "COST",
+   "chapter": "The real cost",
+   "start": 35.62,
+   "dur": 16.0,
+   "audio": 15.2,
+   "title": [
+    "Waiting costs",
+    "more than editing."
+   ],
+   "bullets": [
+    "No video, no reach",
+    "Consistency beats perfection",
+    "Every silent week counts"
+   ],
+   "tone": "red",
+   "tc": "0:36"
+  },
+  {
+   "n": 4,
+   "id": "s04",
+   "label": "MECHANISM",
+   "disp": "MECHANISM",
+   "chapter": "The principle",
+   "start": 51.62,
+   "dur": 15.236,
+   "audio": 14.436,
+   "title": [
+    "I sell the result.",
+    "Not the tool."
+   ],
+   "bullets": [
+    "No subscription",
+    "You get the final file",
+    "MP4 · captions · chapters"
+   ],
+   "tone": "blue",
+   "tc": "0:52"
+  },
+  {
+   "n": 5,
+   "id": "s05",
+   "label": "PROOF",
+   "disp": "PROOF",
+   "chapter": "The proof",
+   "start": 66.856,
+   "dur": 12.192,
+   "audio": 11.392,
+   "title": [
+    "1M+ views.",
+    "On my own posts."
+   ],
+   "bullets": [
+    "My Reels, Shorts and TikTok",
+    "Instagram screenshots on the page",
+    "Check it yourself"
+   ],
+   "tone": "green",
+   "tc": "1:07"
+  },
+  {
+   "n": 6,
+   "id": "s06",
+   "label": "PRICE",
+   "disp": "PRICE",
+   "chapter": "The price",
+   "start": 79.048,
+   "dur": 14.9,
+   "audio": 14.1,
+   "title": [
+    "€50/h → €10/h.",
+    "Of finished video."
+   ],
+   "bullets": [
+    "Billed on delivered hours, not my time",
+    "French or English",
+    "File ready to publish"
+   ],
+   "tone": "blue",
+   "tc": "1:19"
+  },
+  {
+   "n": 7,
+   "id": "s07",
+   "label": "PROCESS",
+   "disp": "PROCESS",
+   "chapter": "How it works",
+   "start": 93.948,
+   "dur": 15.424,
+   "audio": 14.624,
+   "title": [
+    "3 steps.",
+    "Zero meetings."
+   ],
+   "bullets": [
+    "1. You send footage",
+    "2. I edit and deliver",
+    "3. You publish"
+   ],
+   "tone": "green",
+   "tc": "1:34"
+  },
+  {
+   "n": 8,
+   "id": "s08",
+   "label": "FORMATS",
+   "disp": "FORMATS",
+   "chapter": "What you get",
+   "start": 109.372,
+   "dur": 12.152,
+   "audio": 11.352,
+   "title": [
+    "9:16, 16:9, 1:1.",
+    "Captions."
+   ],
+   "bullets": [
+    "Timestamped chapters included",
+    "Hooks and titles on screen",
+    "One file per format"
+   ],
+   "tone": "green",
+   "tc": "1:49"
+  },
+  {
+   "n": 9,
+   "id": "s09",
+   "label": "OBJECTION",
+   "disp": "OBJECTION",
+   "chapter": "Doubts?",
+   "start": 121.524,
+   "dur": 13.844,
+   "audio": 13.044,
+   "title": [
+    "\"Is this just",
+    "one AI button?\""
+   ],
+   "bullets": [
+    "It is a service",
+    "The machine builds, I approve",
+    "You approve before delivery"
+   ],
+   "tone": "red",
+   "tc": "2:02"
+  },
+  {
+   "n": 10,
+   "id": "s10",
+   "label": "TURNAROUND",
+   "disp": "TURNAROUND",
+   "chapter": null,
+   "start": 135.368,
+   "dur": 13.612,
+   "audio": 12.812,
+   "title": [
+    "The deadline",
+    "comes before the payment."
+   ],
+   "bullets": [
+    "Reply in under 24 hours",
+    "Reserved slot for steady volume",
+    "Said no when I can't hold it"
+   ],
+   "tone": "red",
+   "tc": "2:15"
+  },
+  {
+   "n": 11,
+   "id": "s11",
+   "label": "WHO IT'S FOR",
+   "disp": "WHO IT'S FOR",
+   "chapter": "Who it's for",
+   "start": 148.98,
+   "dur": 13.16,
+   "audio": 12.36,
+   "title": [
+    "Creators, brands,",
+    "agencies."
+   ],
+   "bullets": [
+    "They publish every week",
+    "They already have the footage",
+    "They want a price per result"
+   ],
+   "tone": "green",
+   "tc": "2:29"
+  },
+  {
+   "n": 12,
+   "id": "s12",
+   "label": "CTA",
+   "disp": "CTA",
+   "chapter": "What now?",
+   "start": 162.14,
+   "dur": 13.004,
+   "audio": 12.204,
+   "title": [
+    "Send footage.",
+    "Get a video."
+   ],
+   "bullets": [
+    "30s of free test video",
+    "One clip = your trial",
+    "The link is under this video"
+   ],
+   "tone": "blue",
+   "tc": "2:42"
+  }
+ ]
+}

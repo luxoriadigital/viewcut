@@ -1,0 +1,14 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256">
+  <defs>
+    <clipPath id="clLower"><polygon points="1110.95,58.09 -86.25,141.89 -61.85,491.09 1135.35,407.29"/></clipPath>
+    <clipPath id="clUpper"><polygon points="1110.25,48.11 -86.95,131.91 -111.35,-217.29 1085.85,-301.09"/></clipPath>
+  </defs>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="124" font-weight="900" letter-spacing="4" text-anchor="middle">
+    <text x="512" y="136" clip-path="url(#clLower)">Viewcut</text>
+    <g transform="translate(13,-0.91)">
+      <text x="512" y="136" clip-path="url(#clUpper)">Viewcut</text>
+    </g>
+  </g>
+  <text x="512" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="11">MONTAGE VID&#201;O AU R&#201;SULTAT</text>
+</svg>
+

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Viewcut">
+  <title>Viewcut</title>
+  <defs>
+    <clipPath id="vcSrvLower"><polygon points="566.26,-112.91 -299.76,387.09 -99.76,733.50 766.26,233.50"/></clipPath>
+    <clipPath id="vcSrvUpper"><polygon points="555.76,-131.09 -310.26,368.91 -510.26,22.50 355.76,-477.50"/></clipPath>
+  </defs>
+  <g transform="translate(-6.050,3.500)">
+    <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#vcSrvLower)"/>
+    <g transform="translate(12.124,-7.000)">
+      <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#vcSrvUpper)"/>
+    </g>
+  </g>
+</svg>

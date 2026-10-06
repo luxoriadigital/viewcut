@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1920px; height: 1080px; overflow: hidden;
+        background: #0b0f1a; -webkit-font-smoothing: antialiased;
+      }
+      :root {
+        --bg: #0b0f1a; --panel: #141b2e; --fg: #e9eef9; --mute: #93a0bd;
+        --line: rgba(147, 160, 189, .22); --blue: #4d84ff; --blue-solid: #0055ff;
+        --green: #34d399; --red: #ff7a7a; --amber: #f59e0b;
+      }
+      #root {
+        position: relative; width: 100%; height: 100%;
+        background: var(--bg); overflow: hidden;
+        font-family: Montserrat, "Segoe UI", Arial, sans-serif; color: var(--fg);
+      }
+      .mono { font-family: "IBM Plex Mono", Consolas, "Courier New", monospace; }
+      #bg-layer { position: absolute; inset: 0; }
+      #glow {
+        position: absolute; width: 1400px; height: 1400px; left: -320px; top: -520px; opacity: .55;
+        background: radial-gradient(circle at 50% 50%, rgba(0, 85, 255, .34) 0%, rgba(0, 85, 255, .10) 42%, rgba(11, 15, 26, 0) 70%);
+      }
+      #grid {
+        position: absolute; inset: 0; opacity: .5;
+        background-image:
+          linear-gradient(to right, rgba(147,160,189,.07) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(147,160,189,.07) 1px, transparent 1px);
+        background-size: 160px 160px;
+      }
+      #topbar {
+        position: absolute; top: 44px; left: 130px; right: 130px;
+        display: flex; justify-content: space-between; align-items: center;
+        font-size: 22px; letter-spacing: .34em; color: var(--mute); text-transform: uppercase;
+      }
+      #topbar .mark { color: var(--fg); font-weight: 700; }
+      #topbar .mark b { color: var(--blue); font-weight: 700; }
+      #progress-wrap { position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: rgba(147, 160, 189, .12); }
+      #progress { position: absolute; inset: 0; transform-origin: left center; background: linear-gradient(90deg, var(--blue-solid), var(--green)); }
+      .slide { position: absolute; inset: 0; padding: 148px 130px 96px; display: flex; flex-direction: column; justify-content: center; }
+      .ghost {
+        position: absolute; left: -40px; bottom: 60px; font-size: 190px; font-weight: 900;
+        letter-spacing: -.04em; white-space: nowrap; opacity: .05; color: var(--fg); pointer-events: none;
+      }
+      .rule-top, .rule-bottom { position: absolute; left: 130px; right: 130px; height: 2px; background: var(--line); }
+      .rule-top { top: 116px; }
+      .rule-bottom { bottom: 74px; }
+      .kicker {
+        font-size: 24px; letter-spacing: .3em; text-transform: uppercase; color: var(--mute);
+        margin-bottom: 40px; display: flex; gap: 26px; align-items: baseline;
+      }
+      .kick-label { color: var(--blue); font-weight: 700; }
+      .tone-red .kick-label { color: var(--red); }
+      .tone-green .kick-label { color: var(--green); }
+      .tone-amber .kick-label { color: var(--amber); }
+      .kick-sep { color: #6b7a99; }
+      .kick-tc { color: var(--mute); letter-spacing: .18em; }
+      .title { margin-bottom: 54px; }
+      .title div { font-weight: 900; letter-spacing: -.035em; line-height: 1.04; font-size: 92px; color: var(--fg); }
+      .title .t-accent { color: var(--green); font-size: 108px; }
+      .tone-red .title .t-accent { color: var(--red); }
+      .tone-amber .title .t-accent { color: var(--amber); }
+      .tone-blue .title .t-accent { color: var(--blue); }
+      .title .t-sub { color: var(--mute); }
+      .bullets { list-style: none; max-width: 1420px; }
+      .bullets li {
+        display: flex; align-items: center; gap: 28px; font-size: 36px; font-weight: 400;
+        color: var(--fg); line-height: 1.3; padding: 22px 0; border-bottom: 1px solid var(--line);
+      }
+      .bullets li:first-child { border-top: 1px solid var(--line); }
+      .tick { width: 16px; height: 16px; flex: 0 0 16px; background: var(--blue); border-radius: 3px; }
+      .tone-red .tick { background: var(--red); }
+      .tone-green .tick { background: var(--green); }
+      .tone-amber .tick { background: var(--amber); }
+      .counter { position: absolute; right: 130px; bottom: 92px; font-size: 22px; color: var(--fg); letter-spacing: .1em; }
+      .cnt-total { color: var(--mute); }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="173.752"
+      data-fps="30"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div id="bg-layer" aria-hidden="true">
+        <div id="glow"></div>
+        <div id="grid"></div>
+        <div id="topbar"><span class="mark">View<b>cut</b></span><span>Résultat &middot; 10 &euro;/h &middot; FR + EN</span></div>
+        <div id="progress-wrap"><div id="progress"></div></div>
+      </div>
+
+      <section class="slide clip tone-blue" id="s01" data-start="0.000" data-duration="19.212" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">ACCROCHE &middot; ACCROCHE &middot; ACCROCHE</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">ACCROCHE</span><span class="kick-sep">/</span><span class="kick-tc">0:00</span></div>
+        <div class="title">
+<div class="t-accent">10 €.</div><div class="t-sub">L'heure de vidéo livrée.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Montée · sous-titres · prêt à poster</li>
+            <li><span class="tick"></span>Moyenne du marché : 50 €/h</li>
+        </ul>
+        <div class="counter mono">1<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s02" data-start="19.212" data-duration="15.736" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">PROBLÈME &middot; PROBLÈME &middot; PROBLÈME</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">PROBLÈME</span><span class="kick-sep">/</span><span class="kick-tc">0:19</span></div>
+        <div class="title">
+<div class="t-lead">Tu publies trop tard.</div><div class="t-accent">À cause du montage.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Première version : 3 à 5 jours</li>
+            <li><span class="tick"></span>Chaque retouche coûte une semaine</li>
+            <li><span class="tick"></span>Ton calendrier déborde</li>
+        </ul>
+        <div class="counter mono">2<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s03" data-start="34.948" data-duration="14.824" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">COÛT &middot; COÛT &middot; COÛT</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">COÛT</span><span class="kick-sep">/</span><span class="kick-tc">0:35</span></div>
+        <div class="title">
+<div class="t-lead">L'attente coûte</div><div class="t-accent">plus cher que le montage.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Pas de vidéo = pas de portée</li>
+            <li><span class="tick"></span>La régularité bat le perfection</li>
+            <li><span class="tick"></span>Chaque semaine sans publier compte</li>
+        </ul>
+        <div class="counter mono">3<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s04" data-start="49.772" data-duration="17.444" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">MÉCANISME &middot; MÉCANISME &middot; MÉCANISME</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">MÉCANISME</span><span class="kick-sep">/</span><span class="kick-tc">0:50</span></div>
+        <div class="title">
+<div class="t-lead">Je vends le résultat.</div><div class="t-accent">Pas l'outil.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Aucun abonnement</li>
+            <li><span class="tick"></span>Tu reçois le fichier final</li>
+            <li><span class="tick"></span>MP4 · sous-titres · chapitres</li>
+        </ul>
+        <div class="counter mono">4<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s05" data-start="67.216" data-duration="13.704" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">PREUVE &middot; PREUVE &middot; PREUVE</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">PREUVE</span><span class="kick-sep">/</span><span class="kick-tc">1:07</span></div>
+        <div class="title">
+<div class="t-accent">1M+ de vues.</div><div class="t-sub">Sur mes publications.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Mes Reels · Shorts · TikTok</li>
+            <li><span class="tick"></span>Captures Instagram sur la page</li>
+            <li><span class="tick"></span>À vérifier par toi-même</li>
+        </ul>
+        <div class="counter mono">5<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s06" data-start="80.920" data-duration="12.956" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">PRIX &middot; PRIX &middot; PRIX</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">PRIX</span><span class="kick-sep">/</span><span class="kick-tc">1:21</span></div>
+        <div class="title">
+<div class="t-lead">50 €/h → 10 €/h.</div><div class="t-accent">De la vidéo livrée.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Facturé à l'heure livrée, pas à mon temps</li>
+            <li><span class="tick"></span>Français ou anglais</li>
+            <li><span class="tick"></span>Fichier prêt à publier</li>
+        </ul>
+        <div class="counter mono">6<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-green" id="s07" data-start="93.876" data-duration="17.752" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">ÉTAPES &middot; ÉTAPES &middot; ÉTAPES</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">ÉTAPES</span><span class="kick-sep">/</span><span class="kick-tc">1:34</span></div>
+        <div class="title">
+<div class="t-accent">3 étapes.</div><div class="t-sub">Zéro réunion.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>1. Tu envoies tes images</li>
+            <li><span class="tick"></span>2. Je monte et je livre</li>
+            <li><span class="tick"></span>3. Tu publies</li>
+        </ul>
+        <div class="counter mono">7<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-green" id="s08" data-start="111.628" data-duration="11.312" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">FORMATS &middot; FORMATS &middot; FORMATS</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">FORMATS</span><span class="kick-sep">/</span><span class="kick-tc">1:52</span></div>
+        <div class="title">
+<div class="t-lead">9:16, 16:9, 1:1.</div><div class="t-accent">Sous-titres.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Chapitres horodatés inclus</li>
+            <li><span class="tick"></span>Accroches et titres à l'écran</li>
+            <li><span class="tick"></span>Un fichier par format</li>
+        </ul>
+        <div class="counter mono">8<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-red" id="s09" data-start="122.940" data-duration="13.148" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">OBJECTION &middot; OBJECTION &middot; OBJECTION</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">OBJECTION</span><span class="kick-sep">/</span><span class="kick-tc">2:03</span></div>
+        <div class="title">
+<div class="t-lead">« C'est un bouton</div><div class="t-accent">qui génère tout ? »</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>C'est un service</li>
+            <li><span class="tick"></span>La machine produit, je valide</li>
+            <li><span class="tick"></span>Tu valides avant livraison</li>
+        </ul>
+        <div class="counter mono">9<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s10" data-start="136.088" data-duration="12.988" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">DÉLAIS &middot; DÉLAIS &middot; DÉLAIS</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">DÉLAIS</span><span class="kick-sep">/</span><span class="kick-tc">2:16</span></div>
+        <div class="title">
+<div class="t-lead">Le délai annoncé</div><div class="t-accent">avant de payer.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Réponse en moins de 24 h</li>
+            <li><span class="tick"></span>Créneau dédié si volume régulier</li>
+            <li><span class="tick"></span>Refus annoncé si je ne tiens pas</li>
+        </ul>
+        <div class="counter mono">10<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s11" data-start="149.076" data-duration="11.576" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">POUR QUI &middot; POUR QUI &middot; POUR QUI</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">POUR QUI</span><span class="kick-sep">/</span><span class="kick-tc">2:29</span></div>
+        <div class="title">
+<div class="t-lead">Créateurs, marques,</div><div class="t-accent">agences.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>Ils publient chaque semaine</li>
+            <li><span class="tick"></span>Ils ont déjà leurs images</li>
+            <li><span class="tick"></span>Ils veulent un prix au résultat</li>
+        </ul>
+        <div class="counter mono">11<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <section class="slide clip tone-blue" id="s12" data-start="160.652" data-duration="13.100" data-track-index="0">
+        <div class="ghost" data-layout-allow-overflow="true" aria-hidden="true">APPEL &middot; APPEL &middot; APPEL</div>
+        <div class="rule-top"></div>
+        <div class="kicker mono"><span class="kick-label">APPEL</span><span class="kick-sep">/</span><span class="kick-tc">2:41</span></div>
+        <div class="title">
+<div class="t-lead">Envoie tes images.</div><div class="t-accent">Reçois une vidéo.</div>
+        </div>
+        <ul class="bullets">
+            <li><span class="tick"></span>30 s de vidéo test gratuites</li>
+            <li><span class="tick"></span>Tes images = ton essai</li>
+            <li><span class="tick"></span>Le lien est sous cette vidéo</li>
+        </ul>
+        <div class="counter mono">12<span class="cnt-total"> / 12</span></div>
+        <div class="rule-bottom"></div>
+      </section>
+      <audio id="vo-01" src="assets/vo/fr-01.mp3" data-start="0.000" data-duration="18.412" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-02" src="assets/vo/fr-02.mp3" data-start="19.212" data-duration="14.936" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-03" src="assets/vo/fr-03.mp3" data-start="34.948" data-duration="14.024" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-04" src="assets/vo/fr-04.mp3" data-start="49.772" data-duration="16.644" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-05" src="assets/vo/fr-05.mp3" data-start="67.216" data-duration="12.904" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-06" src="assets/vo/fr-06.mp3" data-start="80.920" data-duration="12.156" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-07" src="assets/vo/fr-07.mp3" data-start="93.876" data-duration="16.952" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-08" src="assets/vo/fr-08.mp3" data-start="111.628" data-duration="10.512" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-09" src="assets/vo/fr-09.mp3" data-start="122.940" data-duration="12.348" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-10" src="assets/vo/fr-10.mp3" data-start="136.088" data-duration="12.188" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-11" src="assets/vo/fr-11.mp3" data-start="149.076" data-duration="10.776" data-track-index="1" data-volume="1"></audio>
+      <audio id="vo-12" src="assets/vo/fr-12.mp3" data-start="160.652" data-duration="12.300" data-track-index="1" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#glow", { scale: 1, opacity: .55 }, { scale: 1.08, opacity: .78, duration: 7, ease: "sine.inOut", yoyo: true, repeat: -1 }, 0);
+      tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: 173.752, ease: "none" }, 0);
+      tl.fromTo("#s01 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 0.000);
+      tl.fromTo("#s01 .t-accent, #s01 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 0.160);
+      tl.fromTo("#s01 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 0.340);
+      tl.fromTo("#s01 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 0.600);
+      tl.fromTo("#s01 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 19.212, ease: "none" }, 0.000);
+      tl.fromTo("#s02 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 19.212);
+      tl.fromTo("#s02 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 19.262);
+      tl.fromTo("#s02 .t-accent, #s02 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 19.372);
+      tl.fromTo("#s02 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 19.552);
+      tl.fromTo("#s02 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 19.812);
+      tl.fromTo("#s02 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 15.736, ease: "none" }, 19.212);
+      tl.fromTo("#s03 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 34.948);
+      tl.fromTo("#s03 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 34.998);
+      tl.fromTo("#s03 .t-accent, #s03 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 35.108);
+      tl.fromTo("#s03 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 35.288);
+      tl.fromTo("#s03 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 35.548);
+      tl.fromTo("#s03 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 14.824, ease: "none" }, 34.948);
+      tl.fromTo("#s04 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 49.772);
+      tl.fromTo("#s04 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 49.822);
+      tl.fromTo("#s04 .t-accent, #s04 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 49.932);
+      tl.fromTo("#s04 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 50.112);
+      tl.fromTo("#s04 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 50.372);
+      tl.fromTo("#s04 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 17.444, ease: "none" }, 49.772);
+      tl.fromTo("#s05 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 67.216);
+      tl.fromTo("#s05 .t-accent, #s05 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 67.376);
+      tl.fromTo("#s05 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 67.556);
+      tl.fromTo("#s05 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 67.816);
+      tl.fromTo("#s05 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 13.704, ease: "none" }, 67.216);
+      tl.fromTo("#s06 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 80.920);
+      tl.fromTo("#s06 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 80.970);
+      tl.fromTo("#s06 .t-accent, #s06 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 81.080);
+      tl.fromTo("#s06 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 81.260);
+      tl.fromTo("#s06 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 81.520);
+      tl.fromTo("#s06 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 12.956, ease: "none" }, 80.920);
+      tl.fromTo("#s07 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 93.876);
+      tl.fromTo("#s07 .t-accent, #s07 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 94.036);
+      tl.fromTo("#s07 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 94.216);
+      tl.fromTo("#s07 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 94.476);
+      tl.fromTo("#s07 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 17.752, ease: "none" }, 93.876);
+      tl.fromTo("#s08 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 111.628);
+      tl.fromTo("#s08 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 111.678);
+      tl.fromTo("#s08 .t-accent, #s08 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 111.788);
+      tl.fromTo("#s08 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 111.968);
+      tl.fromTo("#s08 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 112.228);
+      tl.fromTo("#s08 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 11.312, ease: "none" }, 111.628);
+      tl.fromTo("#s09 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 122.940);
+      tl.fromTo("#s09 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 122.990);
+      tl.fromTo("#s09 .t-accent, #s09 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 123.100);
+      tl.fromTo("#s09 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 123.280);
+      tl.fromTo("#s09 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 123.540);
+      tl.fromTo("#s09 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 13.148, ease: "none" }, 122.940);
+      tl.fromTo("#s10 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 136.088);
+      tl.fromTo("#s10 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 136.138);
+      tl.fromTo("#s10 .t-accent, #s10 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 136.248);
+      tl.fromTo("#s10 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 136.428);
+      tl.fromTo("#s10 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 136.688);
+      tl.fromTo("#s10 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 12.988, ease: "none" }, 136.088);
+      tl.fromTo("#s11 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 149.076);
+      tl.fromTo("#s11 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 149.126);
+      tl.fromTo("#s11 .t-accent, #s11 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 149.236);
+      tl.fromTo("#s11 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 149.416);
+      tl.fromTo("#s11 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 149.676);
+      tl.fromTo("#s11 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 11.576, ease: "none" }, 149.076);
+      tl.fromTo("#s12 .kicker", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .4, ease: "power3.out" }, 160.652);
+      tl.fromTo("#s12 .t-lead", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 160.702);
+      tl.fromTo("#s12 .t-accent, #s12 .t-sub", { opacity: 0, y: 44 }, { opacity: 1, y: 0, duration: .55, ease: "power4.out" }, 160.812);
+      tl.fromTo("#s12 .bullets li", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: .45, ease: "back.out(1.6)", stagger: .09 }, 160.992);
+      tl.fromTo("#s12 .counter", { opacity: 0 }, { opacity: 1, duration: .5, ease: "power2.out" }, 161.252);
+      tl.fromTo("#s12 .ghost", { opacity: 0, x: -40 }, { opacity: .05, x: 40, duration: 13.100, ease: "none" }, 160.652);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

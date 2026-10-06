@@ -1,0 +1,185 @@
+{
+  "lang": "fr",
+  "voice": "fr-FR-RemyMultilingualNeural",
+  "slides": [
+    {
+      "n": 1,
+      "label": "HOOK",
+      "chapter": "Ouverture",
+      "title": [
+        "10 €.",
+        "L'heure de vidéo livrée."
+      ],
+      "bullets": [
+        "Montée · sous-titres · prêt à poster",
+        "Moyenne du marché : 50 €/h"
+      ],
+      "vo": "Dix euros. L'heure de vidéo livrée : montée, sous-titrée, prête à publier. Le marché facture en moyenne cinquante euros de l'heure de montage. Pourquoi ce fossé ? … Pas en réduisant la qualité — en changeant la façon de produire. Deux minutes, et vous saurez si c'est fait pour vous."
+    },
+    {
+      "n": 2,
+      "label": "PROBLÈME",
+      "chapter": "Le problème",
+      "title": [
+        "Tu publies trop tard.",
+        "À cause du montage."
+      ],
+      "bullets": [
+        "Première version : 3 à 5 jours",
+        "Chaque retouche coûte une semaine",
+        "Ton calendrier déborde"
+      ],
+      "vo": "Vous avez l'idée le lundi. Les images partent le mardi. La première version revient le vendredi. Une retouche, et on repart pour trois jours. Pendant ce temps, l'algorithme a récompensé quelqu'un d'autre — celui qui a publié."
+    },
+    {
+      "n": 3,
+      "label": "COÛT",
+      "chapter": "Le coût réel",
+      "title": [
+        "L'attente coûte",
+        "plus cher que le montage."
+      ],
+      "bullets": [
+        "Pas de vidéo = pas de portée",
+        "La régularité bat le perfection",
+        "Chaque semaine sans publier compte"
+      ],
+      "vo": "Le montage n'est pas le vrai coût. Le vrai coût ? … la semaine sans vidéo. C'est l'abonnement à l'outil que vous payez alors que le fichier n'est toujours pas là. C'est le freelance à cinquante euros de l'heure que vous n'osez plus appeler."
+    },
+    {
+      "n": 4,
+      "label": "MÉCANISME",
+      "chapter": "Le principe",
+      "title": [
+        "Je vends le résultat.",
+        "Pas l'outil."
+      ],
+      "bullets": [
+        "Aucun abonnement",
+        "Tu reçois le fichier final",
+        "MP4 · sous-titres · chapitres"
+      ],
+      "vo": "Ici, rien ne s'abonne. Vous n'apprenez pas un logiciel, vous ne configurez rien, vous ne regardez aucun tutoriel. Vous envoyez vos images, vous recevez la vidéo finie. Le logiciel que j'utilise, c'est mon affaire — le résultat, c'est le vôtre."
+    },
+    {
+      "n": 5,
+      "label": "PREUVE",
+      "chapter": "La preuve",
+      "title": [
+        "1M+ de vues.",
+        "Sur mes publications."
+      ],
+      "bullets": [
+        "Mes Reels · Shorts · TikTok",
+        "Captures Instagram sur la page",
+        "À vérifier par toi-même"
+      ],
+      "vo": "Plus d'un million de vues cumulées sur l'ensemble de mes publications. Les captures d'écran Instagram sont sur la page, pas dans une présentation. Ouvrez-les, comptez-les : c'est mon travail qui parle, pas une promesse."
+    },
+    {
+      "n": 6,
+      "label": "PRIX",
+      "chapter": "Le prix",
+      "title": [
+        "50 €/h → 10 €/h.",
+        "De la vidéo livrée."
+      ],
+      "bullets": [
+        "Facturé à l'heure livrée, pas à mon temps",
+        "Français ou anglais",
+        "Fichier prêt à publier"
+      ],
+      "vo": "Le prix : … dix euros l'heure de vidéo livrée. Pas dix euros de mon temps — dix euros de ce que vous recevez. Vous payez le fichier, pas la facture d'un prestataire."
+    },
+    {
+      "n": 7,
+      "label": "PROCESS",
+      "chapter": "Comment ça marche",
+      "title": [
+        "3 étapes.",
+        "Zéro réunion."
+      ],
+      "bullets": [
+        "1. Tu envoies tes images",
+        "2. Je monte et je livre",
+        "3. Tu publies"
+      ],
+      "vo": "Une pièce, trois gestes. Vous envoyez vos images et votre intention — une phrase suffit. Je monte, je sous-titre, je découpe selon la plateforme. Vous recevez le fichier, vous publiez. Pas de réunion, pas de call découverte, pas de devis à rallonge."
+    },
+    {
+      "n": 8,
+      "label": "FORMATS",
+      "chapter": "Ce que tu reçois",
+      "title": [
+        "9:16, 16:9, 1:1.",
+        "Sous-titres."
+      ],
+      "bullets": [
+        "Chapitres horodatés inclus",
+        "Accroches et titres à l'écran",
+        "Un fichier par format"
+      ],
+      "vo": "Ce que vous recevez : la version verticale pour les Reels et les Shorts, la version large pour YouTube, les sous-titres incrustés pour ceux qui regardent sans son, et une liste de chapitres horodatée, prête à coller sous ta vidéo."
+    },
+    {
+      "n": 10,
+      "label": "OBJECTION",
+      "chapter": "Les doutes ?",
+      "title": [
+        "« C'est un bouton",
+        "qui génère tout ? »"
+      ],
+      "bullets": [
+        "C'est un service",
+        "La machine produit, je valide",
+        "Tu valides avant livraison"
+      ],
+      "vo": "Non. Ce n'est pas un prompt qu'on envoie pour récupérer une vidéo. Il y a une demande, un humain qui monte, et une validation avant livraison. L'accélérateur est artificiel, la responsabilité ne l'est pas."
+    },
+    {
+      "n": 11,
+      "label": "DÉLAIS",
+      "chapter": null,
+      "title": [
+        "Le délai annoncé",
+        "avant de payer."
+      ],
+      "bullets": [
+        "Réponse en moins de 24 h",
+        "Créneau dédié si volume régulier",
+        "Refus annoncé si je ne tiens pas"
+      ],
+      "vo": "Les délais sont annoncés avant que vous ne payiez quoi que ce soit : une vidéo courte part en général dans la journée, un volume régulier bénéficie d'un créneau réservé. Et si je ne peux pas tenir un délai, je le dis avant de prendre vos images."
+    },
+    {
+      "n": 12,
+      "label": "POUR QUI",
+      "chapter": "Pour qui c'est fait",
+      "title": [
+        "Créateurs, marques,",
+        "agences."
+      ],
+      "bullets": [
+        "Ils publient chaque semaine",
+        "Ils ont déjà leurs images",
+        "Ils veulent un prix au résultat"
+      ],
+      "vo": "Pour qui c'est fait : le créateur qui publie chaque semaine et perd ses soirées au montage ; la marque e-commerce qui a besoin de dix variantes par mois ; l'agence qui revend de la vidéo à ses clients sans embaucher un monteur de plus."
+    },
+    {
+      "n": 13,
+      "label": "CTA",
+      "chapter": "Que faire ?",
+      "title": [
+        "Envoie tes images.",
+        "Reçois une vidéo."
+      ],
+      "bullets": [
+        "30 s de vidéo test gratuites",
+        "Tes images = ton essai",
+        "Le lien est sous cette vidéo"
+      ],
+      "vo": "Le meilleur jugement, c'est l'essai. Envoyez-moi vos images : vous recevez trente secondes de vidéo montées — gratuites — avant tout engagement. Ensuite vous décidez. Le lien est sous la vidéo."
+    }
+  ]
+}

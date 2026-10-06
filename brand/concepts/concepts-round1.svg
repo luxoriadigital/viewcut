@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="984" viewBox="0 0 1600 984"><defs><filter id="grey"><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1600" height="984" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">Viewcut — concepts de logo (ronde 1, noir et blanc)</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Trois familles différentes : symbole, lettrage, logotype</text><rect x="60" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="c0-afLower"><polygon points="565.51,-114.21 -300.51,385.79 49.49,992.01 915.51,492.01"/></clipPath>
+    <clipPath id="c0-afUpper"><polygon points="556.51,-129.79 -309.51,370.21 -659.51,-236.01 206.51,-736.01"/></clipPath>
+  </defs>
+  <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#c0-afLower)"/>
+  <g transform="translate(12.1,-7)">
+    <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#c0-afUpper)"/>
+  </g>
+</svg>
+</g><g filter="url(#grey)">﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" x="90" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="l0-alLower"><polygon points="565.51,-114.21 -300.51,385.79 49.49,992.01 915.51,492.01"/></clipPath>
+    <clipPath id="l0-alUpper"><polygon points="556.51,-129.79 -309.51,370.21 -659.51,-236.01 206.51,-736.01"/></clipPath>
+  </defs>
+  <g transform="translate(97,38) scale(0.71)">
+    <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#l0-alLower)"/>
+    <g transform="translate(12.1,-7)">
+      <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#l0-alUpper)"/>
+    </g>
+  </g>
+  <text x="319" y="186" font-family="Arial Black, Arial, sans-serif" font-size="138" font-weight="900" letter-spacing="-6">Viewcut</text>
+</svg>
+
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s064-afLower"><polygon points="565.51,-114.21 -300.51,385.79 49.49,992.01 915.51,492.01"/></clipPath>
+    <clipPath id="s064-afUpper"><polygon points="556.51,-129.79 -309.51,370.21 -659.51,-236.01 206.51,-736.01"/></clipPath>
+  </defs>
+  <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#s064-afLower)"/>
+  <g transform="translate(12.1,-7)">
+    <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#s064-afUpper)"/>
+  </g>
+</svg>
+</g><text x="122" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="180" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s032-afLower"><polygon points="565.51,-114.21 -300.51,385.79 49.49,992.01 915.51,492.01"/></clipPath>
+    <clipPath id="s032-afUpper"><polygon points="556.51,-129.79 -309.51,370.21 -659.51,-236.01 206.51,-736.01"/></clipPath>
+  </defs>
+  <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#s032-afLower)"/>
+  <g transform="translate(12.1,-7)">
+    <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#s032-afUpper)"/>
+  </g>
+</svg>
+</g><text x="196" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="238" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s016-afLower"><polygon points="565.51,-114.21 -300.51,385.79 49.49,992.01 915.51,492.01"/></clipPath>
+    <clipPath id="s016-afUpper"><polygon points="556.51,-129.79 -309.51,370.21 -659.51,-236.01 206.51,-736.01"/></clipPath>
+  </defs>
+  <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#s016-afLower)"/>
+  <g transform="translate(12.1,-7)">
+    <rect x="36" y="36" width="184" height="184" rx="44" clip-path="url(#s016-afUpper)"/>
+  </g>
+</svg>
+</g><text x="246" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · Cadre tranché</text><text x="90.0" y="808" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="90.0" y="842" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Un cadre vidéo coupé en deux et décalé : la</text><text x="90.0" y="868" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">coupe du montage, lisible dès 16 px.</text><rect x="562.667" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="c1-bvTop"><rect x="-20" y="-20" width="296" height="170"/></clipPath>
+    <clipPath id="c1-bvTip"><rect x="-20" y="168" width="296" height="130"/></clipPath>
+  </defs>
+  <g transform="translate(-9,0)">
+    <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#c1-bvTop)"/>
+    <g transform="translate(18,0)">
+      <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#c1-bvTip)"/>
+    </g>
+  </g>
+</svg>
+</g><g filter="url(#grey)">﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" x="592.667" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="l1-blTop"><rect x="-20" y="-20" width="296" height="170"/></clipPath>
+    <clipPath id="l1-blTip"><rect x="-20" y="168" width="296" height="130"/></clipPath>
+  </defs>
+  <g transform="translate(102,38) scale(0.71) translate(-9,0)">
+    <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#l1-blTop)"/>
+    <g transform="translate(18,0)">
+      <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#l1-blTip)"/>
+    </g>
+  </g>
+  <text x="324" y="186" font-family="Arial Black, Arial, sans-serif" font-size="138" font-weight="900" letter-spacing="-6">Viewcut</text>
+</svg>
+
+
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s164-bvTop"><rect x="-20" y="-20" width="296" height="170"/></clipPath>
+    <clipPath id="s164-bvTip"><rect x="-20" y="168" width="296" height="130"/></clipPath>
+  </defs>
+  <g transform="translate(-9,0)">
+    <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#s164-bvTop)"/>
+    <g transform="translate(18,0)">
+      <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#s164-bvTip)"/>
+    </g>
+  </g>
+</svg>
+</g><text x="624.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="682.667" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s132-bvTop"><rect x="-20" y="-20" width="296" height="170"/></clipPath>
+    <clipPath id="s132-bvTip"><rect x="-20" y="168" width="296" height="130"/></clipPath>
+  </defs>
+  <g transform="translate(-9,0)">
+    <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#s132-bvTop)"/>
+    <g transform="translate(18,0)">
+      <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#s132-bvTip)"/>
+    </g>
+  </g>
+</svg>
+</g><text x="698.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="740.667" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s116-bvTop"><rect x="-20" y="-20" width="296" height="170"/></clipPath>
+    <clipPath id="s116-bvTip"><rect x="-20" y="168" width="296" height="130"/></clipPath>
+  </defs>
+  <g transform="translate(-9,0)">
+    <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#s116-bvTop)"/>
+    <g transform="translate(18,0)">
+      <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#s116-bvTip)"/>
+    </g>
+  </g>
+</svg>
+</g><text x="748.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="592.6666666666667" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · V coupé</text><text x="592.6666666666667" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Le V de Viewcut tranché sous la pointe : la</text><text x="592.6666666666667" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">pointe glisse quand on coupe net.</text><rect x="1065.33" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)">﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" x="1095.33" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="c2-cwLower"><polygon points="1110.91,89.11 -86.21,172.87 -58.29,571.91 1138.83,488.15"/></clipPath>
+    <clipPath id="c2-cwUpper"><polygon points="1110.21,79.13 -86.91,162.89 -114.83,-236.15 1082.29,-419.91"/></clipPath>
+  </defs>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="170" font-weight="900" letter-spacing="4">
+    <text x="512" y="185" text-anchor="middle" clip-path="url(#c2-cwLower)">Viewcut</text>
+    <g transform="translate(13,-0.91)">
+      <text x="512" y="185" text-anchor="middle" clip-path="url(#c2-cwUpper)">Viewcut</text>
+    </g>
+  </g>
+</svg>
+
+</g><g filter="url(#grey)">﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" x="1095.33" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="l2-clLower"><polygon points="1110.95,58.09 -86.25,141.89 -61.85,491.09 1135.35,407.29"/></clipPath>
+    <clipPath id="l2-clUpper"><polygon points="1110.25,48.11 -86.95,131.91 -111.35,-217.29 1085.85,-301.09"/></clipPath>
+  </defs>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="124" font-weight="900" letter-spacing="4" text-anchor="middle">
+    <text x="512" y="136" clip-path="url(#l2-clLower)">Viewcut</text>
+    <g transform="translate(13,-0.91)">
+      <text x="512" y="136" clip-path="url(#l2-clUpper)">Viewcut</text>
+    </g>
+  </g>
+  <text x="512" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="11">MONTAGE VID&#201;O AU R&#201;SULTAT</text>
+</svg>
+
+</g><g filter="url(#grey)">﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" x="1095.33" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s264-cwLower"><polygon points="1110.91,89.11 -86.21,172.87 -58.29,571.91 1138.83,488.15"/></clipPath>
+    <clipPath id="s264-cwUpper"><polygon points="1110.21,79.13 -86.91,162.89 -114.83,-236.15 1082.29,-419.91"/></clipPath>
+  </defs>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="170" font-weight="900" letter-spacing="4">
+    <text x="512" y="185" text-anchor="middle" clip-path="url(#s264-cwLower)">Viewcut</text>
+    <g transform="translate(13,-0.91)">
+      <text x="512" y="185" text-anchor="middle" clip-path="url(#s264-cwUpper)">Viewcut</text>
+    </g>
+  </g>
+</svg>
+
+</g><text x="1127.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)">﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" x="1185.33" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s232-cwLower"><polygon points="1110.91,89.11 -86.21,172.87 -58.29,571.91 1138.83,488.15"/></clipPath>
+    <clipPath id="s232-cwUpper"><polygon points="1110.21,79.13 -86.91,162.89 -114.83,-236.15 1082.29,-419.91"/></clipPath>
+  </defs>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="170" font-weight="900" letter-spacing="4">
+    <text x="512" y="185" text-anchor="middle" clip-path="url(#s232-cwLower)">Viewcut</text>
+    <g transform="translate(13,-0.91)">
+      <text x="512" y="185" text-anchor="middle" clip-path="url(#s232-cwUpper)">Viewcut</text>
+    </g>
+  </g>
+</svg>
+
+</g><text x="1201.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)">﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256" x="1243.33" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <clipPath id="s216-cwLower"><polygon points="1110.91,89.11 -86.21,172.87 -58.29,571.91 1138.83,488.15"/></clipPath>
+    <clipPath id="s216-cwUpper"><polygon points="1110.21,79.13 -86.91,162.89 -114.83,-236.15 1082.29,-419.91"/></clipPath>
+  </defs>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="170" font-weight="900" letter-spacing="4">
+    <text x="512" y="185" text-anchor="middle" clip-path="url(#s216-cwLower)">Viewcut</text>
+    <g transform="translate(13,-0.91)">
+      <text x="512" y="185" text-anchor="middle" clip-path="url(#s216-cwUpper)">Viewcut</text>
+    </g>
+  </g>
+</svg>
+
+</g><text x="1251.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="1095.3333333333335" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">C · Viewcut tranché</text><text x="1095.3333333333335" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Le mot complet tranché en biais : la coupe</text><text x="1095.3333333333335" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">traverse chaque lettre.</text></svg>

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Viewcut — video editing at €10 per hour of finished video</title>
+ <meta name="description" content="Video editing at €10 per hour of finished video (vs ~€50/h of billed time). Subtitles, timestamped chapters, 9:16 and 16:9 formats. Free 30-second test video. My posts have passed 1M views." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+<link rel="icon" href="favicon.ico" sizes="48x48" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="alternate" hreflang="en" href="index-en.html" />
+<link rel="alternate" hreflang="fr" href="index.html" />
+<link rel="alternate" hreflang="x-default" href="index.html" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="theme-color" content="#0055ff" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Viewcut" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Viewcut — video editing at €10 per hour of finished video" />
+ <meta property="og:description" content="Video editing at €10 per hour of finished video. Subtitles, chapters, 9:16 and 16:9 formats. Free 30-second test video." />
+<!-- TODO après déploiement : og:image + og:url en URL absolue (les scrapers ignorent les chemins relatifs). -->
+</head>
+<body>
+
+<!-- TODO AVANT MISE EN LIGNE : e-mail de contact, délai exact, nombre de tours de révisions,
+     identité légale (footer), déploiement. -->
+
+<header class="nav">
+  <div class="nav-pill">
+    <a class="logo" href="#top" aria-label="Viewcut — home"><img src="brand/kit/viewcut-horizontal.svg" alt="Viewcut" width="1024" height="256" /></a>
+    <nav class="nav-links">
+      <a href="#proof">Proof</a>
+      <a href="#process">Method</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <nav class="lang-switch" aria-label="Language">
+      <a class="mono" href="index.html" hreflang="fr">FR</a>
+      <a class="mono" href="index-en.html" hreflang="en" aria-current="page">EN</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" data-wa data-wa-text="Hi Viewcut — I want my free 30-second test video." href="https://wa.me/">WhatsApp</a>
+  </div>
+  <nav class="nav-jump" aria-label="Section shortcuts">
+    <a href="#proof">Proof</a>
+    <a href="#process">Method</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO : titre → VSL (petite) → description -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge"><span class="dot"></span>1M+ views on my posts · Reels, Shorts, TikTok</span>
+      <h1>
+        You send your footage.
+        <span class="accent shine">You get the video.</span>
+      </h1>
+
+      <div class="hero-vsl" id="vsl">
+        <div class="player" id="player">
+          <video id="vsl-video" src="assets/vsl-en.mp4" preload="metadata" playsinline aria-label="Viewcut introduction video"></video>
+          <button class="big-play" id="big-play" type="button" aria-label="Play the video"><span></span></button>
+          <div class="missing" id="vsl-missing" role="status" hidden>
+            <b>The video won't load</b>
+            <span>Try again in a moment, or message me on WhatsApp.</span>
+          </div>
+          <div class="ctrl" id="ctrl">
+            <div class="scrub" id="scrub">
+              <div class="scrub-rail"></div>
+              <div class="scrub-played" id="scrub-played"></div>
+              <div class="ch-bar" id="chbar" aria-label="Chapters"></div>
+              <div class="scrub-knob" id="scrub-knob"></div>
+            </div>
+            <div class="ctrl-row">
+              <button class="cbtn" id="btn-play" type="button" aria-label="Play or pause"><span class="ic-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg></span></button>
+              <span class="time mono"><b id="t-cur">0:00</b><i>/</i><span id="t-dur">—</span></span>
+              <span class="ctrl-sp"></span>
+              <button class="cbtn cbtn-lbl" id="chapters-btn" type="button" aria-expanded="false" aria-controls="chapters-panel"><span class="ic-menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v2H4zm0 6h16v2H4zm0 6h16v2H4z"/></svg></span><em>Chapters</em></button>
+              <button class="cbtn" id="btn-mute" type="button" aria-label="Mute"><span class="ic-vol"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></span></button>
+              <input class="vol" id="vol" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume" />
+              <button class="cbtn cbtn-speed" id="btn-speed" type="button" aria-label="Playback speed">1.2×</button>
+              <button class="cbtn" id="btn-fs" type="button" aria-label="Fullscreen"><span class="ic-fs"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg></span></button>
+            </div>
+          </div>
+          <div class="ch-panel" id="chapters-panel" hidden>
+            <div class="ch-panel-head"><b>Chapters</b><span class="mono" id="ch-duration">—</span></div>
+            <ol id="chapters"></ol>
+          </div>
+          <div class="ch-tip mono" id="chtip" hidden></div>
+        </div>
+      </div>
+
+      <p class="lede">
+        Editing, burned-in subtitles, timestamped chapters, 9:16 and 16:9 formats — <b>€10 per hour of finished video</b>, not per hour spent learning to use a tool. And to start: <b>30 seconds of free test video</b>, judged on the result.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" data-wa data-wa-text="Hi Viewcut — I want my free 30-second test video." href="https://wa.me/">Message me on WhatsApp</a>
+        <a class="btn btn-ghost btn-lg" href="#process">How it works</a>
+      </div>
+      <div class="stats">
+        <div class="stat hl"><b>10 <em>€</em></b><span>per hour of finished video</span></div>
+        <div class="stat"><b>50 <span style="font-size:20px">€/h</span></b><span>market average for editing</span></div>
+        <div class="stat"><b>1M+</b><span>views on my posts</span></div>
+        <div class="stat"><b>30 s</b><span>of free test video</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEME -->
+  <section id="problem">
+    <div class="wrap">
+      <div class="eyebrow">The problem</div>
+      <h2 class="h2">Editing isn't the cost.<br />Waiting is.</h2>
+      <div class="rows">
+        <div class="row">
+          <span class="x">✕</span>
+          <h4>3 to 5 days for a first version</h4>
+          <p>Your Monday idea waits on someone's calendar before it exists.</p>
+        </div>
+        <div class="row">
+          <span class="x">✕</span>
+          <h4>€50/h of billed time</h4>
+          <p>You pay for the hours spent, not for the file you receive.</p>
+        </div>
+        <div class="row">
+          <span class="x">✕</span>
+          <h4>Yet another subscription</h4>
+          <p>The tool doesn't edit the video for you — it just asks for your time.</p>
+        </div>
+        <div class="row">
+          <span class="x">✕</span>
+          <h4>The week with no post</h4>
+          <p>No video, no reach — and the backlog spills into the next month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MECANISME -->
+  <section class="alt" id="system">
+    <div class="wrap">
+      <div class="eyebrow">The principle</div>
+      <h2 class="h2">You get a video.<br />Not software.</h2>
+      <p class="sub">Nothing to learn, nothing to set up, no tutorial to watch. You send, you receive, you publish.</p>
+      <div class="rows">
+        <div class="row">
+          <span class="x ok">✓</span>
+          <h4>No subscription</h4>
+          <p>A price per hour of finished video, paid when there's a deliverable.</p>
+        </div>
+        <div class="row">
+          <span class="x ok">✓</span>
+          <h4>The final file</h4>
+          <p>A ready-to-publish MP4, not a draft you still have to finish.</p>
+        </div>
+        <div class="row">
+          <span class="x ok">✓</span>
+          <h4>Subtitles + chapters</h4>
+          <p>Burned-in text for silent viewing, timestamped chapters for the description.</p>
+        </div>
+        <div class="row">
+          <span class="x ok">✓</span>
+          <h4>Test before paying</h4>
+          <p>30 seconds of edited video, free and watermarked, judged on the result.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="eyebrow">How it works</div>
+      <h2 class="h2">3 steps. Zero meetings.</h2>
+      <div class="steps">
+        <div class="step">
+          <b>01</b>
+          <h4>You send</h4>
+          <p>A link to your footage (Drive, WeTransfer, Dropbox), one line on what the video should do — and the clip you want the 30-second test from.</p>
+        </div>
+        <div class="step">
+          <b>02</b>
+          <h4>I edit</h4>
+          <p>Editing, pacing, facecam, images and video, subtitles, platform cuts, timestamped chapters.</p>
+        </div>
+        <div class="step">
+          <b>03</b>
+          <h4>You publish</h4>
+          <p>One file per format, the chapter list to paste, and it's live.</p>
+        </div>
+      </div>
+      <div class="fmt-row">
+        <span class="fmt"><b>9:16</b> Reels · Shorts · TikTok</span>
+        <span class="fmt"><b>16:9</b> YouTube · website</span>
+        <span class="fmt"><b>1:1</b> Feed</span>
+        <span class="fmt"><b>ST</b> Subtitles</span>
+        <span class="fmt"><b>§</b> Chapters</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREUVES : autorité — mes publications, pas un résultat du service -->
+  <section class="alt" id="proof">
+    <div class="wrap">
+      <div class="eyebrow">My posts</div>
+      <h2 class="h2">1M+ views,<br />screenshot by screenshot.</h2>
+      <p class="sub">Below are my Instagram screenshots, exactly as they are: around 700,000 views visible at a glance. Across all of my content, the total passes one million. These are my own posts — the editing behind Viewcut, to check before we talk.</p>
+
+      <div class="proof-grid">
+        <div class="shot" data-src="assets/proof/proof-1.png" data-alt="Instagram screenshot — account insights: 639,971 views, 382,049 accounts reached"><div class="ph"><b>Instagram screenshot</b><span>Click to enlarge</span></div></div>
+        <div class="shot" data-src="assets/proof/proof-2.png" data-alt="Instagram screenshot — account insights: 32,191 views, 23,237 accounts reached"><div class="ph"><b>Instagram screenshot</b><span>Click to enlarge</span></div></div>
+        <div class="shot" data-src="assets/proof/proof-3.png" data-alt="Instagram screenshot — account insights: 14,256 views, 10,515 accounts reached"><div class="ph"><b>Instagram screenshot</b><span>Click to enlarge</span></div></div>
+      </div>
+
+      <div class="proof-bar">
+        <div class="pb">
+          <b>≈&nbsp;700&nbsp;000</b>
+          <span>views visible in the screenshots</span>
+        </div>
+        <div class="pb plus">
+          <b>+ the rest</b>
+          <span>across all content</span>
+        </div>
+        <div class="pb hl">
+          <b>1M+</b>
+          <span>views across all my posts</span>
+        </div>
+        <p class="pb-note">
+          Click a screenshot to open it fullscreen and read the full numbers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIX -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="eyebrow">The price</div>
+      <h2 class="h2">€10 per hour of finished video.</h2>
+      <div class="price-wrap">
+        <div class="price-card">
+          <div class="amount">10 <em>€</em></div>
+          <div class="per">per hour of finished video — edited, subtitled, ready to publish</div>
+          <ul>
+            <li><span class="ic">30 s</span><span><b>free test video with watermark</b> before paying</span></li>
+            <li><span class="ic">10 €</span>&nbsp;instead of around €50/h of billed time</li>
+            <li><span class="ic">✓</span>&nbsp;Formats 9:16 · 16:9 · 1:1</li>
+            <li><span class="ic">✓</span>&nbsp;Subtitles + timestamped chapters</li>
+            <li><span class="ic">✓</span>&nbsp;1 round of revisions <!-- TODO : confirmer le nombre --></li>
+          </ul>
+          <div class="hero-cta" style="margin-top:26px">
+            <a class="btn btn-primary btn-lg" data-wa data-wa-text="Hi Viewcut — I want my free 30-second test video." href="https://wa.me/">I want my 30 seconds free</a>
+          </div>
+        </div>
+        <div class="cmp-scroll">
+          <table class="cmp">
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Criterion</span></th>
+                <th scope="col">Typical freelancer</th>
+                <th scope="col">Subscription tool</th>
+                <th scope="col" class="us"><img class="cmp-logo" src="brand/kit/viewcut-horizontal.svg" alt="Viewcut" width="1024" height="256" /></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Who edits the video</th>
+                <td>The freelancer</td>
+                <td>You, with the tool</td>
+                <td class="us">Me</td>
+              </tr>
+              <tr>
+                <th scope="row">What you pay</th>
+                <td>~€50/h of time</td>
+                <td>A subscription</td>
+                <td class="us">€10/h finished</td>
+              </tr>
+              <tr>
+                <th scope="row">What you get</th>
+                <td>Hours spent</td>
+                <td>Features</td>
+                <td class="us">The final file</td>
+              </tr>
+              <tr>
+                <th scope="row">Subscription</th>
+                <td>—</td>
+                <td>Yes, forever</td>
+                <td class="us">No</td>
+              </tr>
+              <tr>
+                <th scope="row">Trial before paying</th>
+                <td>—</td>
+                <td>Demo</td>
+                <td class="us">Free 30s</td>
+              </tr>
+              <tr>
+                <th scope="row">Turnaround stated</th>
+                <td>After the quote</td>
+                <td>—</td>
+                <td class="us">Before you pay</td>
+              </tr>
+              <tr>
+                <th scope="row">If you get stuck</th>
+                <td>The freelancer</td>
+                <td>The tool's support</td>
+                <td class="us">Me, on WhatsApp</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POUR QUI -->
+  <section class="alt" id="fit">
+    <div class="wrap">
+      <div class="eyebrow">Who it's for</div>
+      <h2 class="h2">Who it's for — and who it isn't.</h2>
+      <div class="rows">
+        <div class="row">
+          <span class="x">✕</span>
+          <h4>Not for you if…</h4>
+          <p>You want to learn editing yourself · you haven't shot any footage yet · you're after the cheapest subscription on the market.</p>
+        </div>
+        <div class="row">
+          <span class="x ok">✓</span>
+          <h4>For you if…</h4>
+          <p>You post every week · you already have your footage · you want a price per result, not an hourly invoice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="h2">Frequently asked questions</h2>
+      <div class="faq">
+        <details open>
+          <summary>How does the free 30-second test work?</summary>
+          <p>Send your footage and the clip you care about: I send back those 30 seconds edited, subtitled and watermarked — free. If you like the result, we talk about the rest; if not, you keep the 30 seconds.</p>
+        </details>
+        <details>
+          <summary>Is it a tool or a service?</summary>
+          <p>A service. You don't open anything, you don't set anything up: there's a request, an edit, and an approval before delivery. The machine speeds up production, it doesn't decide in your place.</p>
+        </details>
+        <details>
+          <summary>How do I send my footage?</summary>
+          <p>A Drive, WeTransfer or Dropbox link, plus one line on what the video should do. No meeting to schedule.</p>
+        </details>
+        <details>
+          <summary>What exactly do I get?</summary>
+          <p>One MP4 per format (9:16, 16:9, 1:1), burned-in subtitles, and a timestamped chapter list, ready to paste under your video.</p>
+        </details>
+        <details>
+          <summary>What's the turnaround?</summary>
+          <p>The turnaround is stated before any payment; a short video usually goes out the same day, and steady volume gets a reserved slot. <!-- TODO : confirmer les délais réels --></p>
+        </details>
+        <details>
+          <summary>Do you work with agencies?</summary>
+          <p>Yes, as a white-label partner: your deliverables, your name, my editing behind the scenes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOC FINAL -->
+  <section id="final">
+    <div class="wrap">
+      <div class="final">
+        <h2>Send your footage.<br />Get 30 seconds free.</h2>
+        <p>30 seconds of your video, edited, subtitled and watermarked, before you pay anything. Then you decide.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" data-wa data-wa-text="Hi Viewcut — I want my free 30-second test video." href="https://wa.me/">Message me on WhatsApp</a>
+          <a class="btn btn-ghost btn-lg" href="#pricing" style="color:#fff;border-color:rgba(255,255,255,.35)">See the price</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="big-logo" src="brand/kit/viewcut-horizontal-white.svg" alt="Viewcut" width="1024" height="256" />
+    <div class="cols">
+      <div class="legal">
+        Provider: [legal name] · [address] · [contact e-mail] · [legal notice to complete]. Figures shown: service pricing, ≈&nbsp;700&nbsp;000 views visible in the Instagram screenshots and a total across all posts above 1M (Proof section).
+      </div>
+      <div>
+        <div><a href="#vsl">VSL</a> · <a href="#proof">Proof</a> · <a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a></div>
+        <div class="mono" style="margin-top:8px;opacity:.7">© 2026 Viewcut</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

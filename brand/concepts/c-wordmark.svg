@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 256">
+  <defs>
+    <clipPath id="cwLower"><polygon points="1110.91,89.11 -86.21,172.87 -58.29,571.91 1138.83,488.15"/></clipPath>
+    <clipPath id="cwUpper"><polygon points="1110.21,79.13 -86.91,162.89 -114.83,-236.15 1082.29,-419.91"/></clipPath>
+  </defs>
+  <g font-family="Arial Black, Arial, sans-serif" font-size="170" font-weight="900" letter-spacing="4">
+    <text x="512" y="185" text-anchor="middle" clip-path="url(#cwLower)">Viewcut</text>
+    <g transform="translate(13,-0.91)">
+      <text x="512" y="185" text-anchor="middle" clip-path="url(#cwUpper)">Viewcut</text>
+    </g>
+  </g>
+</svg>
+

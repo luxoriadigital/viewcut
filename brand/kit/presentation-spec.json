@@ -1,0 +1,44 @@
+{
+  "brand": "Viewcut",
+  "tagline": "Montage vidéo à 10 €/h",
+  "brief": "Service de montage vidéo à 10 €/h pour créateurs, vloggers et entreprises qui publient sur les réseaux. Le logo doit dire la coupe du montage, tenir à 16 px dans un onglet de navigateur, et rester net en noir, blanc et bleu de marque.",
+  "adjectives": [
+    "net",
+    "dynamique",
+    "accessible",
+    "précis"
+  ],
+  "criteria": "Succès : distinct des logos tech type supabase/atomic, reconnaissable dès 16 px, fonctionne en une seule couleur, la coupe se lit sans explication.",
+  "industry": "services",
+  "mockups": ["website", "favicon-tab", "app-icon", "social", "business-card", "signage"],
+  "nav": ["Comment ça marche", "Tarifs", "Contact"],
+  "brand_color": "#0055ff",
+  "greyscale": false,
+  "final": true,
+  "round": 1,
+  "designer": "Viewcut — identité visuelle",
+  "tile_color": "#0055ff",
+  "concepts": [
+    {
+      "name": "Cadre tranché",
+      "symbol": "viewcut-symbol.svg",
+      "lockup": "viewcut-horizontal.svg",
+      "stacked": "viewcut-stacked.svg",
+      "avatar": "viewcut-symbol-square.svg",
+      "idea": "Un cadre arrondi tranché en deux par une coupe à 30° — les deux moitiés glissent l'une par rapport à l'autre, comme une image qui passe à la cisaille.",
+      "rationale": [
+        "La coupe traverse de bord à bord : le geste du montage, sans texte ni cisaille littérale",
+        "Le décalage crée un vrai négatif — la barre de lumière reste lisible de 16 px à l'enseigne",
+        "Un seul rayon, une seule couleur : monochrome, favicon et déclinaisons en bleu #0055ff"
+      ],
+      "symbol_on_tile": "viewcut-symbol-white.svg",
+      "lockup_on_dark": "viewcut-horizontal-white.svg"
+    }
+  ],
+  "recommendation": "Cadre tranché retenu — le plus distinct des marques tech, le seul qui reste net en petit, et il devient naturellement icône d'app et favicon.",
+  "next_steps": [
+    "Valider le tagline officiel (proposition : « Montage vidéo à 10 €/h »)",
+    "Brancher le favicon et le snippet web fournis dans kit/web",
+    "Remplacer le logo texte actuel du site par le lockup horizontal"
+  ]
+}

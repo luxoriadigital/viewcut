@@ -1,0 +1,224 @@
+{
+ "fr": {
+  "total": 173.752,
+  "duration": "2:54",
+  "chapters": [
+   {
+    "t": 0.0,
+    "tc": "0:00",
+    "title": "Ouverture"
+   },
+   {
+    "t": 19.212,
+    "tc": "0:19",
+    "title": "Le problème"
+   },
+   {
+    "t": 34.948,
+    "tc": "0:35",
+    "title": "Le coût réel"
+   },
+   {
+    "t": 49.772,
+    "tc": "0:50",
+    "title": "Le principe"
+   },
+   {
+    "t": 67.216,
+    "tc": "1:07",
+    "title": "La preuve"
+   },
+   {
+    "t": 80.92,
+    "tc": "1:21",
+    "title": "Le prix"
+   },
+   {
+    "t": 93.876,
+    "tc": "1:34",
+    "title": "Comment ça marche"
+   },
+   {
+    "t": 111.628,
+    "tc": "1:52",
+    "title": "Ce que tu reçois"
+   },
+   {
+     "t": 122.94,
+     "tc": "2:03",
+     "title": "Les doutes ?"
+   },
+   {
+    "t": 149.076,
+    "tc": "2:29",
+    "title": "Pour qui c'est fait"
+   },
+   {
+     "t": 160.652,
+     "tc": "2:41",
+     "title": "Que faire ?"
+   }
+  ],
+  "slides": [
+   {
+    "t": 0.0,
+    "label": "HOOK"
+   },
+   {
+    "t": 19.212,
+    "label": "PROBLÈME"
+   },
+   {
+    "t": 34.948,
+    "label": "COÛT"
+   },
+   {
+    "t": 49.772,
+    "label": "MÉCANISME"
+   },
+   {
+    "t": 67.216,
+    "label": "PREUVE"
+   },
+   {
+    "t": 80.92,
+    "label": "PRIX"
+   },
+   {
+    "t": 93.876,
+    "label": "PROCESS"
+   },
+   {
+    "t": 111.628,
+    "label": "FORMATS"
+   },
+   {
+    "t": 122.94,
+    "label": "OBJECTION"
+   },
+   {
+    "t": 136.088,
+    "label": "DÉLAIS"
+   },
+   {
+    "t": 149.076,
+    "label": "POUR QUI"
+   },
+   {
+    "t": 160.652,
+    "label": "CTA"
+   }
+  ]
+ },
+ "en": {
+  "total": 175.144,
+  "duration": "2:55",
+  "chapters": [
+   {
+    "t": 0.0,
+    "tc": "0:00",
+    "title": "Opening"
+   },
+   {
+    "t": 19.98,
+    "tc": "0:20",
+    "title": "The problem"
+   },
+   {
+    "t": 35.62,
+    "tc": "0:36",
+    "title": "The real cost"
+   },
+   {
+    "t": 51.62,
+    "tc": "0:52",
+    "title": "The principle"
+   },
+   {
+    "t": 66.856,
+    "tc": "1:07",
+    "title": "The proof"
+   },
+   {
+    "t": 79.048,
+    "tc": "1:19",
+    "title": "The price"
+   },
+   {
+    "t": 93.948,
+    "tc": "1:34",
+    "title": "How it works"
+   },
+   {
+    "t": 109.372,
+    "tc": "1:49",
+    "title": "What you get"
+   },
+   {
+     "t": 121.524,
+     "tc": "2:02",
+     "title": "Doubts?"
+   },
+   {
+    "t": 148.98,
+    "tc": "2:29",
+    "title": "Who it's for"
+   },
+   {
+     "t": 162.14,
+     "tc": "2:42",
+     "title": "What now?"
+   }
+  ],
+  "slides": [
+   {
+    "t": 0.0,
+    "label": "HOOK"
+   },
+   {
+    "t": 19.98,
+    "label": "PROBLEM"
+   },
+   {
+    "t": 35.62,
+    "label": "COST"
+   },
+   {
+    "t": 51.62,
+    "label": "MECHANISM"
+   },
+   {
+    "t": 66.856,
+    "label": "PROOF"
+   },
+   {
+    "t": 79.048,
+    "label": "PRICE"
+   },
+   {
+    "t": 93.948,
+    "label": "PROCESS"
+   },
+   {
+    "t": 109.372,
+    "label": "FORMATS"
+   },
+   {
+    "t": 121.524,
+    "label": "OBJECTION"
+   },
+   {
+    "t": 135.368,
+    "label": "TURNAROUND"
+   },
+   {
+    "t": 148.98,
+    "label": "WHO IT'S FOR"
+   },
+   {
+    "t": 162.14,
+    "label": "CTA"
+   }
+  ]
+ }
+}

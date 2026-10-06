@@ -1,0 +1,7 @@
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_parts/fr-12/00.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_gap.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_parts/fr-12/01.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_gap.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_parts/fr-12/02.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_gap.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_parts/fr-12/03.mp3'

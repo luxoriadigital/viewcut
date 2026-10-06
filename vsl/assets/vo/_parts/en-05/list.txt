@@ -1,0 +1,5 @@
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_parts/en-05/00.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_gap.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_parts/en-05/01.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_gap.mp3'
+file 'C:/Users/moham/Downloads/viewcut/vsl/assets/vo/_parts/en-05/02.mp3'

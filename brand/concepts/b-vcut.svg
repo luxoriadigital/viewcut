@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <clipPath id="bvTop"><rect x="-20" y="-20" width="296" height="170"/></clipPath>
+    <clipPath id="bvTip"><rect x="-20" y="168" width="296" height="130"/></clipPath>
+  </defs>
+  <g transform="translate(-9,0)">
+    <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#bvTop)"/>
+    <g transform="translate(18,0)">
+      <polygon points="31,48 83,48 128,126 173,48 225,48 128,216" clip-path="url(#bvTip)"/>
+    </g>
+  </g>
+</svg>
