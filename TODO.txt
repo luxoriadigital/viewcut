@@ -1,6 +1,6 @@
 # Viewcut — points à confirmer avant publication
 
-Nom : **Viewcut** (viewcut.vercel.app libre au 05/10/2026 — collision exacte non trouvée ;
+Nom : **Viewcut** (viewcut.vercel.app **réservé par nous dès le 05/10 (déployé le 06/10) — collision exacte non trouvée ;
   à vérifier : handle Instagram/X, marque déposée, dashboard Vercel pour créer le projet).
   Alternatives gardées : Renderly, Reelproof, Montage, Cutroom.
 
@@ -234,6 +234,9 @@ Nom : **Viewcut** (viewcut.vercel.app libre au 05/10/2026 — collision exacte n
   captures visuelles : EN 1440 ✓, FR 1440 ✓ (switch FR actif), nav EN 390 ✓.
 
 ## Suite possible
-- Déploiement Vercel (nom à créer dans le dashboard) + domaine.
+- ~~Déploiement Vercel~~ **fait 06/10** : github.com/luxoriadigital/viewcut (public, 2 commits) +
+  https://viewcut.vercel.app (projet `viewcut`, compte Vercel `mohamedisosy9-debug`,
+  redéploiement : `vercel.cmd deploy --prod --yes` depuis `viewcut/`). Reste : og:image
+  (carte 1200×630), domaine personnalisé, branchement Git GitHub→Vercel auto-deploy.
 - Ajout d'un vrai contact (formulaire/calendrier) et des captures.
 - OpenSEO : crédits insuffisants pour du rank/keyword là tout de suite.
