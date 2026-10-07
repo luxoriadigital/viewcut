@@ -1,7 +1,7 @@
 {
   "brand": "Viewcut",
-  "tagline": "Montage vidéo à 10 €/h",
-  "brief": "Service de montage vidéo à 10 €/h pour créateurs, vloggers et entreprises qui publient sur les réseaux. Le logo doit dire la coupe du montage, tenir à 16 px dans un onglet de navigateur, et rester net en noir, blanc et bleu de marque.",
+  "tagline": "Montage vidéo à partir de 10 €/h",
+  "brief": "Service de montage vidéo à partir de 10 €/h pour créateurs, vloggers et entreprises qui publient sur les réseaux. Le logo doit dire la coupe du montage, tenir à 16 px dans un onglet de navigateur, et rester net en noir, blanc et bleu de marque.",
   "adjectives": [
     "net",
     "dynamique",
@@ -37,7 +37,7 @@
   ],
   "recommendation": "Cadre tranché retenu — le plus distinct des marques tech, le seul qui reste net en petit, et il devient naturellement icône d'app et favicon.",
   "next_steps": [
-    "Valider le tagline officiel (proposition : « Montage vidéo à 10 €/h »)",
+    "Valider le tagline officiel (proposition : « Montage vidéo à partir de 10 €/h »)",
     "Brancher le favicon et le snippet web fournis dans kit/web",
     "Remplacer le logo texte actuel du site par le lockup horizontal"
   ]

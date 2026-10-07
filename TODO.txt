@@ -13,7 +13,7 @@ Nom : **Viewcut** (viewcut.vercel.app **réservé par nous dès le 05/10 (déplo
 5. Deuxième langue FR/EN : calcul du devis (FAQ) — volontairement non numéroté.
 
 ## Chiffres autorisés (fournis par toi, conservés tels quels)
-- 10 € par heure de vidéo livrée.
+- À partir de 10 € par heure de vidéo livrée (formulation imposée 06/10).
 - ~50 €/h = moyenne du marché en montage (vérifié 05/10/2026 — Videotto : mid 50–80 €/h,
   senior 85 €/+ ; Raccordfilm : 50–90 €/h ; Malt 2025 : TJM moyen 471 € ≈ 59 €/h ;
   le « 35 €/h » initial était sous-estimé → remplacé partout : page + scripts FR/EN).
@@ -215,7 +215,7 @@ Nom : **Viewcut** (viewcut.vercel.app **réservé par nous dès le 05/10 (déplo
 
 - **`index-en.html`** : traduction complète de la landing (mêmes guidelines FR :
   ton direct, aucun mot interdit — vérif 'noBannedWords' EN : buy now/guaranteed/
-  limited time/offer/discount/sell = 0), mêmes chiffres (10 €/h, ~50 €/h, 30 s
+  limited time/offer/discount/sell = 0), mêmes chiffres (à partir de 10 €/h, ~50 €/h, 30 s
   avec filigrane, 1M+, ≈700 000), meta/og + `og:locale en_US` traduites,
   hreflang (fr/en/x-default) sur les 2 pages, `data-wa-text` en anglais.
 - **Switch `FR | EN`** dans la pilule de nav (haut, visible à toutes tailles) :
